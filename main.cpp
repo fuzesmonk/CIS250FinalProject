@@ -1,4 +1,4 @@
-#include "MemoryMatch.hpp"
+#include "gameboard.cpp"
 #include <iostream>
 #include <iomanip>
 #include <fstream>
@@ -6,10 +6,7 @@
 
 int main(){
 
-    MemoryMatch game1;
-    game1.themeSelect();
-    game1.sizeSelect();
-    game1.getWords();
+    gameboard mainGame;
 
 
     return 0;

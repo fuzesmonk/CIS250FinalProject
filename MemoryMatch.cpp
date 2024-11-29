@@ -1,7 +1,6 @@
 #include "MemoryMatch.hpp"
 #include <iostream>
 #include <iomanip>
-#include <array>
 #include <fstream>
 #include <cmath>
 
@@ -9,14 +8,13 @@
 MemoryMatch::MemoryMatch(){
     themeFile = "none";
     boardSize = 0;
-    char tableColumn[8] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'};
     difficultyTime = 0;
     row = 0;
 
 }
 
 
-void MemoryMatch::sizeSelect(){
+int MemoryMatch::sizeSelect(){
     bool done = true;
     while(done){
         int userSelection;
@@ -39,9 +37,10 @@ void MemoryMatch::sizeSelect(){
             case 3:
                 boardSize = 8;
                 done = false;
-                break;        
+                break;
         }
     }
+    return boardSize;
 }
 
 void MemoryMatch::timeSelect(){
@@ -69,7 +68,7 @@ void MemoryMatch::timeSelect(){
     }
 }
 
-void MemoryMatch::themeSelect(){
+bool MemoryMatch::themeSelect(){
 
     bool done = true;
     int userSelection;
@@ -81,26 +80,25 @@ void MemoryMatch::themeSelect(){
         std::cin >> userSelection;
         switch(userSelection){
             case 1:
-                themeFile = "humanProteins.txt";
+                themeFile = "./themes/humanProteins.txt";
                 themeName = "Human Proteins";
                 done = false;
                 //std::cout << "DEBUG: Proteins" << std::endl;
                 break;
 
             case 2:
-                themeFile = "USmilitaryaircraft.txt";
+                themeFile = "./themes/USmilitaryaircraft.txt";
                 themeName = "US Military Aircraft";
                 done = false;
                 //std::cout << "DEBUG: Aircraft" << std::endl;
                 break;
 
             case 3:
-                themeFile = "x86assembly.txt";
+                themeFile = "./themes/x86assembly.txt";
                 themeName = "x86 Assembly";
                 done = false;
                 //std::cout << "DEBUG: Assembly" << std::endl;
                 break;
-
         }
     }
     //Import File Contents
@@ -112,18 +110,17 @@ void MemoryMatch::themeSelect(){
         i++;
     }
     inputFile.close();
+    return true;
 }
 
-
-void MemoryMatch::getWords(){
-double neededWords = (pow(boardSize, 2)) / 2;
-    std::cout << "Needed Words Value: " << neededWords << std::endl;
-    std::string chosenWordArray[int(neededWords)];
+std::string * MemoryMatch::getWords(std::size_t& size_out){
+    int neededWords = (pow(boardSize, 2) / 2);;
+    std::string * ptrChosenWord = new std::string[neededWords];
+    size_out = neededWords;
     //Default Values for all array members
-    for(int j = 0; j < ((int(neededWords)) / 2) - 1; j++){
-        chosenWordArray[j] = "none";
+    for(int j = 0; j < ((neededWords) / 2) - 1; j++){
+        ptrChosenWord[j] = "none";
     }
-
     std::string newWord;
     int randomNum = 0;
     int openIndex = 0;
@@ -133,21 +130,22 @@ double neededWords = (pow(boardSize, 2)) / 2;
         randomNum = rand() % 50;
         potentialWord = AllWords[randomNum];
         for(int i = 0; i <= openIndex; i++){
-            if(potentialWord != chosenWordArray[i]){
+            if(potentialWord != ptrChosenWord[i]){
                 inArray = false;
                 }
             else{
                 inArray = true;
                 //std::cout << "Word Already in Array" << std::endl;
             }
-            }
+        }
         if(inArray){
             break;
         }    
         else{
-            chosenWordArray[openIndex] = potentialWord;
+            ptrChosenWord[openIndex] = potentialWord;
             openIndex++;
         }
-        }    
-
+    }  
+    wordsSelected = true; 
+    return ptrChosenWord;
 }

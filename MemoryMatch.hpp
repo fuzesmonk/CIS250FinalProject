@@ -44,19 +44,19 @@ class MemoryMatch{
         int difficultyTime;
         //Store Word location as a int+Char
         int row;
+        bool wordsSelected;
 
     public:
         MemoryMatch();
 
-        void sizeSelect();
+        int sizeSelect();
 
         void timeSelect();
 
         //themeFile Selection, loads words into array
-        void themeSelect();
+        bool themeSelect();
 
         //void boardInit();
-
-        void getWords();
-
+    
+        std::string * getWords(std::size_t &size_out);
 };

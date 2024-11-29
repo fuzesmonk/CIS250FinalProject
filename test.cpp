@@ -26,39 +26,19 @@ int main(){
 
 
     //Testing Code
-    double neededWords = (pow(boardSize, 2)) / 2;
-    std::cout << "Needed Words Value: " << neededWords << std::endl;
-    std::string chosenWordArray[int(neededWords)];
-    //Default Values for all array members
-    for(int j = 0; j < ((int(neededWords)) / 2) - 1; j++){
-        chosenWordArray[j] = "none";
+    char tableColumn[8] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'};
+    int neededFormat = 4;
+    int neededColumns = neededFormat;
+    int neededRows = neededFormat;
+    std::string wordLocation;
+    //[Columns][Rows]
+    std::string wordArray[neededFormat][neededFormat];
+    for(int i = 0; i < neededFormat; i++){
+        for(int j = 0; j < neededFormat; j++){
+            wordLocation = tableColumn[i] + std::to_string(j);
+            std::cout << "DEBUG wordLocation: " << wordLocation << std::endl;
+        }
     }
-
-    std::string newWord;
-    int randomNum = 0;
-    int openIndex = 0;
-    bool inArray = true;
-    std::string potentialWord;
-    while(openIndex < neededWords){
-        randomNum = rand() % 50;
-        potentialWord = AllWords[randomNum];
-        for(int i = 0; i <= openIndex; i++){
-            if(potentialWord != chosenWordArray[i]){
-                inArray = false;
-                }
-            else{
-                inArray = true;
-                std::cout << "Word Already in Array" << std::endl;
-            }
-            }
-        if(inArray){
-            break;
-        }    
-        else{
-            chosenWordArray[openIndex] = potentialWord;
-            openIndex++;
-        }
-        }
     return 0;
 }
 
