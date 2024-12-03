@@ -114,7 +114,7 @@ bool MemoryMatch::themeSelect(){
 }
 
 std::string * MemoryMatch::getWords(std::size_t& size_out){
-    int neededWords = (pow(boardSize, 2) / 2);;
+    int neededWords = (pow(boardSize, 2) / 2);
     std::string * ptrChosenWord = new std::string[neededWords];
     size_out = neededWords;
     //Default Values for all array members

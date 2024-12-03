@@ -30,5 +30,4 @@ class gameboard : public MemoryMatch{
                 }
             }
         }
-
 };
