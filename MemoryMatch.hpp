@@ -2,11 +2,9 @@
  * @file MemoryMatch.hpp
  * @author Ella Ley
  * @brief Memory Matching Game
- * @version 0.1
+ * @version 1.0
  * @date 2024-11-08
- * 
- * @copyright Copyright (c) 2024
- * 
+ *  
  */
 
 //Requirements
@@ -39,24 +37,35 @@ class MemoryMatch{
         std::string AllWords[51];
         std::string themeFile;
         std::string themeName;
+        std::string displayThemeName;
         std::string * SelectedWords;
+        std::string * ptrChosenWords = nullptr;
         int boardSize;
         int difficultyTime;
-        //Store Word location as a int+Char
         int row;
         bool wordsSelected;
+        int totalWords;
 
     public:
         MemoryMatch();
 
+        
         int sizeSelect();
 
-        void timeSelect();
+        int timeSelect();
 
         //themeFile Selection, loads words into array
         bool themeSelect();
 
         //void boardInit();
     
-        std::string * getWords(std::size_t &size_out);
+        std::string * getWords();
+
+        int getWordCount();
+
+        int getSize();
+
+        std::string  getDisplayTheme();
+
+        ~MemoryMatch(){};
 };

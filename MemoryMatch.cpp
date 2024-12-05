@@ -4,16 +4,24 @@
 #include <fstream>
 #include <cmath>
 
-
+/**
+ * @brief Construct a new Memory Match:: Memory Match object
+ * 
+ */
 MemoryMatch::MemoryMatch(){
     themeFile = "none";
     boardSize = 0;
     difficultyTime = 0;
     row = 0;
+    displayThemeName = "none";
 
 }
 
-
+/**
+ * @brief Selects size for the gameboard for later use
+ * 
+ * @return int Dimension of one side of the gameboard
+ */
 int MemoryMatch::sizeSelect(){
     bool done = true;
     while(done){
@@ -43,31 +51,47 @@ int MemoryMatch::sizeSelect(){
     return boardSize;
 }
 
-void MemoryMatch::timeSelect(){
+
+/**
+ * @brief Selects how long the words will be displayed if not matching
+ * 
+ * @return int How long the user can see the words before the board is reset
+ */
+int MemoryMatch::timeSelect(){
     int userSelection;
     bool done = true;
     while(done){
-    std::cout << "Select how long words are displayed when pair do not match" << std::endl;
-    std::cout << "1. 6 Seconds" << std::endl;
-    std::cout << "2. 4 Seconds" << std::endl;
-    std::cout << "3. 2 Seconds" << std::endl;
-    std::cout << "Enter Selection Number: ";
-    std::cin >> userSelection;
+        std::cout << "Select how long words are displayed when pair do not match" << std::endl;
+        std::cout << "1. 6 Seconds" << std::endl;
+        std::cout << "2. 4 Seconds" << std::endl;
+        std::cout << "3. 2 Seconds" << std::endl;
+        std::cout << "Enter Selection Number: ";
+        std::cin >> userSelection;
 
-    switch(userSelection){
-        case 1:
-            difficultyTime = 6;
-            break;
-        case 2:
-            difficultyTime = 4;
-            break;
-        case 3:
-            difficultyTime = 2;
-            break;        
+        switch(userSelection){
+            case 1:
+                difficultyTime = 6;
+                done = false;
+                break;
+            case 2:
+                difficultyTime = 4;
+                done = false;
+                break;
+            case 3:
+                difficultyTime = 2;
+                done = false;
+                break;        
+            }
         }
-    }
+    return difficultyTime;
 }
 
+/**
+ * @brief Selects theme for 3 possible choices corresponding to its respective .txt file
+ * 
+ * @return true When a theme has been chosen and words are loaded into the @var AllWords array
+ * @return false Does not occur as the theme will only exit upon successful loading of a theme
+ */
 bool MemoryMatch::themeSelect(){
 
     bool done = true;
@@ -82,6 +106,7 @@ bool MemoryMatch::themeSelect(){
             case 1:
                 themeFile = "./themes/humanProteins.txt";
                 themeName = "Human Proteins";
+                displayThemeName = "Protein";
                 done = false;
                 //std::cout << "DEBUG: Proteins" << std::endl;
                 break;
@@ -89,6 +114,7 @@ bool MemoryMatch::themeSelect(){
             case 2:
                 themeFile = "./themes/USmilitaryaircraft.txt";
                 themeName = "US Military Aircraft";
+                displayThemeName = "Aircraft";
                 done = false;
                 //std::cout << "DEBUG: Aircraft" << std::endl;
                 break;
@@ -96,6 +122,7 @@ bool MemoryMatch::themeSelect(){
             case 3:
                 themeFile = "./themes/x86assembly.txt";
                 themeName = "x86 Assembly";
+                displayThemeName = "x86";
                 done = false;
                 //std::cout << "DEBUG: Assembly" << std::endl;
                 break;
@@ -113,13 +140,19 @@ bool MemoryMatch::themeSelect(){
     return true;
 }
 
-std::string * MemoryMatch::getWords(std::size_t& size_out){
+/**
+ * @brief Sets up the array that selects which words are loaded into the gameboard
+ * 
+ * @return std::string* Pointer to the array of strings which contains all of the words loaded into gameboard
+ */
+std::string * MemoryMatch::getWords(){
     int neededWords = (pow(boardSize, 2) / 2);
-    std::string * ptrChosenWord = new std::string[neededWords];
-    size_out = neededWords;
+    totalWords = neededWords;
+    std::string ChosenWords[neededWords];
+    ptrChosenWords = ChosenWords;
     //Default Values for all array members
     for(int j = 0; j < ((neededWords) / 2) - 1; j++){
-        ptrChosenWord[j] = "none";
+        ptrChosenWords[j] = "none";
     }
     std::string newWord;
     int randomNum = 0;
@@ -130,7 +163,7 @@ std::string * MemoryMatch::getWords(std::size_t& size_out){
         randomNum = rand() % 50;
         potentialWord = AllWords[randomNum];
         for(int i = 0; i <= openIndex; i++){
-            if(potentialWord != ptrChosenWord[i]){
+            if(potentialWord != ptrChosenWords[i]){
                 inArray = false;
                 }
             else{
@@ -142,10 +175,36 @@ std::string * MemoryMatch::getWords(std::size_t& size_out){
             break;
         }    
         else{
-            ptrChosenWord[openIndex] = potentialWord;
+            ptrChosenWords[openIndex] = potentialWord;
             openIndex++;
         }
     }  
     wordsSelected = true; 
-    return ptrChosenWord;
+    return ptrChosenWords;
+}
+/**
+ * @brief Simple Getter for the total word count
+ * 
+ * @return int Count of how many words will be needed in the gameboard
+ */
+int MemoryMatch::getWordCount(){
+    return totalWords;
+}
+
+/**
+ * @brief Simple Getter for gameboard size
+ * 
+ * @return int Size of one side of the gameboard
+ */
+int MemoryMatch::getSize(){
+    return boardSize;
+}
+
+/**
+ * @brief Simple Getter for the theme name
+ * 
+ * @return std::string Abbreviated name of the theme for use in the gameboard
+ */
+std::string MemoryMatch::getDisplayTheme(){
+    return displayThemeName;
 }

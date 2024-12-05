@@ -9,6 +9,7 @@
                 "-g",
                 "${workspaceFolder}/main.cpp",
                 "${workspaceFolder}/MemoryMatch.cpp",
+                "${workspaceFolder}/game.cpp",
                 "-o",
                 "${workspaceFolder}/main"
             ],
