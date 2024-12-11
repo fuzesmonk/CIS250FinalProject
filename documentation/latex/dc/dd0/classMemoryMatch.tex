@@ -1,0 +1,148 @@
+\doxysection{Memory\+Match Class Reference}
+\hypertarget{classMemoryMatch}{}\label{classMemoryMatch}\index{MemoryMatch@{MemoryMatch}}
+
+
+{\ttfamily \#include $<$Memory\+Match.\+hpp$>$}
+
+
+
+Inheritance diagram for Memory\+Match\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{d5/db7/classMemoryMatch__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMemoryMatch_a7221a0b7d33bf079df51c1f7f52aa2dd}{Memory\+Match}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Memory Match\+:\+: Memory Match object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMemoryMatch_ab214a6a4f93fe767eaa48b7f95604f25}{size\+Select}} ()
+\begin{DoxyCompactList}\small\item\em Selects size for the gameboard for later use. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMemoryMatch_aeab50a2848575f22c0a2ab0e5be3104c}{time\+Select}} ()
+\begin{DoxyCompactList}\small\item\em Selects how long the words will be displayed if not matching. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMemoryMatch_aa0e33dacdedd0c1f93bf8833e7143466}{theme\+Select}} ()
+\item 
+std\+::string \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classMemoryMatch_a98890fad5dd1b297821368e1174afc32}{get\+Words}} ()
+\begin{DoxyCompactList}\small\item\em Sets up the array that selects which words are loaded into the gameboard. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMemoryMatch_ae43cac49e0032393c908eaebc7228844}{get\+Word\+Count}} ()
+\begin{DoxyCompactList}\small\item\em Simple Getter for the total word count. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMemoryMatch_a59bdc8cf61e4194c21c1c01015cbe15b}{get\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Simple Getter for gameboard size. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classMemoryMatch_a187ad5023aa4b00580eec08f63999bbb}{get\+Display\+Theme}} ()
+\begin{DoxyCompactList}\small\item\em Simple Getter for the theme name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMemoryMatch_a1b2cf5418b2b26e21b4fd12d880e79b7}{\texorpdfstring{$\sim$}{\string~}\+Memory\+Match}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classMemoryMatch_a7221a0b7d33bf079df51c1f7f52aa2dd}\index{MemoryMatch@{MemoryMatch}!MemoryMatch@{MemoryMatch}}
+\index{MemoryMatch@{MemoryMatch}!MemoryMatch@{MemoryMatch}}
+\doxysubsubsection{\texorpdfstring{MemoryMatch()}{MemoryMatch()}}
+{\footnotesize\ttfamily \label{classMemoryMatch_a7221a0b7d33bf079df51c1f7f52aa2dd} 
+Memory\+Match\+::\+Memory\+Match (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Construct a new Memory Match\+:\+: Memory Match object. 
+
+\Hypertarget{classMemoryMatch_a1b2cf5418b2b26e21b4fd12d880e79b7}\index{MemoryMatch@{MemoryMatch}!````~MemoryMatch@{\texorpdfstring{$\sim$}{\string~}MemoryMatch}}
+\index{````~MemoryMatch@{\texorpdfstring{$\sim$}{\string~}MemoryMatch}!MemoryMatch@{MemoryMatch}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MemoryMatch()}{\string~MemoryMatch()}}
+{\footnotesize\ttfamily \label{classMemoryMatch_a1b2cf5418b2b26e21b4fd12d880e79b7} 
+Memory\+Match\+::\texorpdfstring{$\sim$}{\string~}\+Memory\+Match (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMemoryMatch_a187ad5023aa4b00580eec08f63999bbb}\index{MemoryMatch@{MemoryMatch}!getDisplayTheme@{getDisplayTheme}}
+\index{getDisplayTheme@{getDisplayTheme}!MemoryMatch@{MemoryMatch}}
+\doxysubsubsection{\texorpdfstring{getDisplayTheme()}{getDisplayTheme()}}
+{\footnotesize\ttfamily \label{classMemoryMatch_a187ad5023aa4b00580eec08f63999bbb} 
+std\+::string Memory\+Match\+::get\+Display\+Theme (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Simple Getter for the theme name. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string Abbreviated name of the theme for use in the gameboard 
+\end{DoxyReturn}
+\Hypertarget{classMemoryMatch_a59bdc8cf61e4194c21c1c01015cbe15b}\index{MemoryMatch@{MemoryMatch}!getSize@{getSize}}
+\index{getSize@{getSize}!MemoryMatch@{MemoryMatch}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily \label{classMemoryMatch_a59bdc8cf61e4194c21c1c01015cbe15b} 
+int Memory\+Match\+::get\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Simple Getter for gameboard size. 
+
+\begin{DoxyReturn}{Returns}
+int Size of one side of the gameboard 
+\end{DoxyReturn}
+\Hypertarget{classMemoryMatch_ae43cac49e0032393c908eaebc7228844}\index{MemoryMatch@{MemoryMatch}!getWordCount@{getWordCount}}
+\index{getWordCount@{getWordCount}!MemoryMatch@{MemoryMatch}}
+\doxysubsubsection{\texorpdfstring{getWordCount()}{getWordCount()}}
+{\footnotesize\ttfamily \label{classMemoryMatch_ae43cac49e0032393c908eaebc7228844} 
+int Memory\+Match\+::get\+Word\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Simple Getter for the total word count. 
+
+\begin{DoxyReturn}{Returns}
+int Count of how many words will be needed in the gameboard 
+\end{DoxyReturn}
+\Hypertarget{classMemoryMatch_a98890fad5dd1b297821368e1174afc32}\index{MemoryMatch@{MemoryMatch}!getWords@{getWords}}
+\index{getWords@{getWords}!MemoryMatch@{MemoryMatch}}
+\doxysubsubsection{\texorpdfstring{getWords()}{getWords()}}
+{\footnotesize\ttfamily \label{classMemoryMatch_a98890fad5dd1b297821368e1174afc32} 
+std\+::string \texorpdfstring{$\ast$}{*} Memory\+Match\+::get\+Words (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Sets up the array that selects which words are loaded into the gameboard. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string\texorpdfstring{$\ast$}{*} Pointer to the array of strings which contains all of the words loaded into gameboard 
+\end{DoxyReturn}
+\Hypertarget{classMemoryMatch_ab214a6a4f93fe767eaa48b7f95604f25}\index{MemoryMatch@{MemoryMatch}!sizeSelect@{sizeSelect}}
+\index{sizeSelect@{sizeSelect}!MemoryMatch@{MemoryMatch}}
+\doxysubsubsection{\texorpdfstring{sizeSelect()}{sizeSelect()}}
+{\footnotesize\ttfamily \label{classMemoryMatch_ab214a6a4f93fe767eaa48b7f95604f25} 
+int Memory\+Match\+::size\+Select (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Selects size for the gameboard for later use. 
+
+\begin{DoxyReturn}{Returns}
+int Dimension of one side of the gameboard 
+\end{DoxyReturn}
+\Hypertarget{classMemoryMatch_aa0e33dacdedd0c1f93bf8833e7143466}\index{MemoryMatch@{MemoryMatch}!themeSelect@{themeSelect}}
+\index{themeSelect@{themeSelect}!MemoryMatch@{MemoryMatch}}
+\doxysubsubsection{\texorpdfstring{themeSelect()}{themeSelect()}}
+{\footnotesize\ttfamily \label{classMemoryMatch_aa0e33dacdedd0c1f93bf8833e7143466} 
+bool Memory\+Match\+::theme\+Select (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classMemoryMatch_aeab50a2848575f22c0a2ab0e5be3104c}\index{MemoryMatch@{MemoryMatch}!timeSelect@{timeSelect}}
+\index{timeSelect@{timeSelect}!MemoryMatch@{MemoryMatch}}
+\doxysubsubsection{\texorpdfstring{timeSelect()}{timeSelect()}}
+{\footnotesize\ttfamily \label{classMemoryMatch_aeab50a2848575f22c0a2ab0e5be3104c} 
+int Memory\+Match\+::time\+Select (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Selects how long the words will be displayed if not matching. 
+
+\begin{DoxyReturn}{Returns}
+int How long the user can see the words before the board is reset 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{MemoryMatch_8hpp}{Memory\+Match.\+hpp}}\item 
+\mbox{\hyperlink{MemoryMatch_8cpp}{Memory\+Match.\+cpp}}\end{DoxyCompactItemize}

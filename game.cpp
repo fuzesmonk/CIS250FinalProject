@@ -59,8 +59,10 @@ bool game::start(){
             //Checks if the array has a blank value, replaces it with word if it does and sets firstPlace to true
             if(board[randomRow][randomCol] == ""){
                 board[randomRow][randomCol] = wordPool[wordIndex];
+                std::cout << wordPool[wordIndex] << " placed at row " << randomRow + 1 << " and column " << randomCol + 1 << std::endl;
                 firstPlace = true;
             }   else{
+                    continue;
                     std::cout << "Array at row " << randomRow << " and column " << randomCol << " filled. Retrying" << std::endl;
             }
         }
@@ -72,9 +74,11 @@ bool game::start(){
 
                 if(board[randomRow][randomCol] == "") {
                     board[randomRow][randomCol] = wordPool[wordIndex];
+                    std::cout << wordPool[wordIndex] << " placed at row " << randomRow + 1 << " and column " << randomCol + 1 << std::endl;
                     wordIndex++;
                     secondPlace = true;
                 } else{
+                    continue;
                     std::cout << "Array at row " << randomRow << " and column " << randomCol << " filled. Retrying" << std::endl;
                 }
             }
@@ -89,7 +93,7 @@ bool game::start(){
  * @return int Returns 0 if all the words are found, else returns 1 as a catch condition
  */
 int game::gameLoop(){
-    system("clear");
+    //system("clear");
     while(!finished) {
         printBoard(board, revealed, cellWidth, rows, cols);
 
@@ -135,7 +139,7 @@ int game::gameLoop(){
             continue;
         }        
         matchedWords += checkAndRevealWords(board, revealed, rows, cols, x1, y1, x2, y2);
-        if(matchedWords >= rows * 2){
+        if(matchedWords >= ((rows * rows) / 2)){
             std::cout << "All Words Found!" << std::endl;
             finished = true;
             return 0;
@@ -150,7 +154,7 @@ int game::gameLoop(){
 /**
  * @brief Prints out the board, with cells containing either the placeholder or the shown word
  * 
- * @param board Poiter to the gameboard array
+ * @param board Pointer to the gameboard array
  * @param revealed Pointer that stores which of the values in the gameboard are revealed
  * @param cellWidth Controls the width of the cells in the board, can be changed 
  * @param rows Rows needed to display the gameboard
@@ -216,7 +220,7 @@ int game::checkAndRevealWords(std::string ** board, bool * revealed, int rows, i
         return 0;
     } else{
         std::cout << "The Words Match" << std::endl;
-        system("clear");
+        //system("clear");
         return 1;
     }
 } 

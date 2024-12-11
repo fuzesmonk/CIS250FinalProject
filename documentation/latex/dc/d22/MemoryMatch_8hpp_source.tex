@@ -1,0 +1,68 @@
+\doxysection{Memory\+Match.\+hpp}
+\hypertarget{MemoryMatch_8hpp_source}{}\label{MemoryMatch_8hpp_source}\mbox{\hyperlink{MemoryMatch_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{//Requirements}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//3\ Themes,\ each\ based\ on\ one\ of\ the\ three\ txt\ files\ in\ \(\backslash\)dir\ themes}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//Have\ each\ themeFile\ have\ a\ term\ that\ describes\ it}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00014\ \textcolor{comment}{//USER\ MENU}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//Level\ of\ Play:\ 4x4,\ 6x6,\ 8x8}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//Speed\ of\ Play:\ How\ long\ in\ seconds\ words\ in\ the\ grids\ will\ be\ shown:\ 2,\ 4,\ 6}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//At\ game\ start,\ themeFile\ name\ should\ be\ shown\ in\ all\ grid\ spaces}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//MECHANICS}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//Amount\ of\ words\ needed\ is\ gridSize\ /\ 2}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//Each\ word\ will\ be\ present\ twice\ on\ the\ board}}
+\DoxyCodeLine{00023\ \textcolor{comment}{//Store\ the\ words\ and\ their\ respective\ locations\ in\ a\ 2D\ array}}
+\DoxyCodeLine{00024\ \textcolor{comment}{//}}
+\DoxyCodeLine{00025\ \textcolor{comment}{//GAMEPLAY\ LOOP}}
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ 1.\ User\ selects\ first\ square,\ themeFile\ term\ is\ replaced\ by\ its\ respective\ word\ from\ the\ word\ array}}
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ 2.\ User\ selects\ second\ square,\ themeFile\ term\ replaced\ by\ respective\ word\ from\ game\ array}}
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ 3.\ IF\ SAME:\ Keep\ terms\ displayed,\ those\ terms\ are\ no\ longer\ selectable}}
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ \ \ \ IF\ DIFFERENT:\ Terms\ remain\ on\ screen\ for\ selected\ difficulty\ time,\ then\ revert\ to\ themeFile\ name}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMemoryMatch}{MemoryMatch}}\{}
+\DoxyCodeLine{00035\ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ std::string\ AllWords[51];}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ std::string\ themeFile;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ std::string\ themeName;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ std::string\ displayThemeName;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ std::string\ *\ SelectedWords;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ std::string\ *\ ptrChosenWords\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ boardSize;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ difficultyTime;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ row;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ wordsSelected;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ totalWords;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMemoryMatch_a7221a0b7d33bf079df51c1f7f52aa2dd}{MemoryMatch}}();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classMemoryMatch_ab214a6a4f93fe767eaa48b7f95604f25}{sizeSelect}}();}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classMemoryMatch_aeab50a2848575f22c0a2ab0e5be3104c}{timeSelect}}();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{comment}{//themeFile\ Selection,\ loads\ words\ into\ array}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classMemoryMatch_aa0e33dacdedd0c1f93bf8833e7143466}{themeSelect}}();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{comment}{//void\ boardInit();}}
+\DoxyCodeLine{00061\ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ std::string\ *\ \mbox{\hyperlink{classMemoryMatch_a98890fad5dd1b297821368e1174afc32}{getWords}}();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classMemoryMatch_ae43cac49e0032393c908eaebc7228844}{getWordCount}}();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classMemoryMatch_a59bdc8cf61e4194c21c1c01015cbe15b}{getSize}}();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ std::string\ \ \mbox{\hyperlink{classMemoryMatch_a187ad5023aa4b00580eec08f63999bbb}{getDisplayTheme}}();}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMemoryMatch_a1b2cf5418b2b26e21b4fd12d880e79b7}{\string~MemoryMatch}}()\{\};}
+\DoxyCodeLine{00071\ \};}
+
+\end{DoxyCode}

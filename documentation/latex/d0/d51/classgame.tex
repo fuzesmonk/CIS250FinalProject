@@ -1,0 +1,136 @@
+\doxysection{game Class Reference}
+\hypertarget{classgame}{}\label{classgame}\index{game@{game}}
+
+
+{\ttfamily \#include $<$game.\+hpp$>$}
+
+
+
+Inheritance diagram for game\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{d5/d88/classgame__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgame_ad9c102127b5038f880067ad6c9198d38}{game}} ()
+\item 
+bool \mbox{\hyperlink{classgame_afb0d520d10ea97e22e5dd1bc22ada83d}{start}} ()
+\begin{DoxyCompactList}\small\item\em Startup script for game. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classgame_af875d3b5898df522fa4adaab36efef4a}{game\+Loop}} ()
+\begin{DoxyCompactList}\small\item\em Main game loop, contains the logic for finding the cells in the 2d array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame_a3fa363de9ebd2b0c4dd5abd8d1cd19ba}{print\+Board}} (std\+::string \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}, const bool \texorpdfstring{$\ast$}{*}, const int, int, int)
+\begin{DoxyCompactList}\small\item\em Prints out the board, with cells containing either the placeholder or the shown word. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classgame_a0a664af4227a7f83b97ae9b7b16f1412}{check\+And\+Reveal\+Words}} (std\+::string \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}, bool \texorpdfstring{$\ast$}{*}, int, int, int, int, int, int)
+\item 
+\mbox{\hyperlink{classgame_ae87abd20c4d8a7906fa48e690a5f1d07}{\texorpdfstring{$\sim$}{\string~}game}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{classgame_ad9c102127b5038f880067ad6c9198d38}{game\+::game} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classMemoryMatch}{Memory\+Match}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMemoryMatch_a7221a0b7d33bf079df51c1f7f52aa2dd}{Memory\+Match}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Memory Match\+:\+: Memory Match object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMemoryMatch_ab214a6a4f93fe767eaa48b7f95604f25}{size\+Select}} ()
+\begin{DoxyCompactList}\small\item\em Selects size for the gameboard for later use. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMemoryMatch_aeab50a2848575f22c0a2ab0e5be3104c}{time\+Select}} ()
+\begin{DoxyCompactList}\small\item\em Selects how long the words will be displayed if not matching. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMemoryMatch_aa0e33dacdedd0c1f93bf8833e7143466}{theme\+Select}} ()
+\item 
+std\+::string \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classMemoryMatch_a98890fad5dd1b297821368e1174afc32}{get\+Words}} ()
+\begin{DoxyCompactList}\small\item\em Sets up the array that selects which words are loaded into the gameboard. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMemoryMatch_ae43cac49e0032393c908eaebc7228844}{get\+Word\+Count}} ()
+\begin{DoxyCompactList}\small\item\em Simple Getter for the total word count. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMemoryMatch_a59bdc8cf61e4194c21c1c01015cbe15b}{get\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Simple Getter for gameboard size. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classMemoryMatch_a187ad5023aa4b00580eec08f63999bbb}{get\+Display\+Theme}} ()
+\begin{DoxyCompactList}\small\item\em Simple Getter for the theme name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMemoryMatch_a1b2cf5418b2b26e21b4fd12d880e79b7}{\texorpdfstring{$\sim$}{\string~}\+Memory\+Match}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classgame_ad9c102127b5038f880067ad6c9198d38}\index{game@{game}!game@{game}}
+\index{game@{game}!game@{game}}
+\doxysubsubsection{\texorpdfstring{game()}{game()}}
+{\footnotesize\ttfamily \label{classgame_ad9c102127b5038f880067ad6c9198d38} 
+game\+::game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classgame_ae87abd20c4d8a7906fa48e690a5f1d07}\index{game@{game}!````~game@{\texorpdfstring{$\sim$}{\string~}game}}
+\index{````~game@{\texorpdfstring{$\sim$}{\string~}game}!game@{game}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}game()}{\string~game()}}
+{\footnotesize\ttfamily \label{classgame_ae87abd20c4d8a7906fa48e690a5f1d07} 
+game\+::\texorpdfstring{$\sim$}{\string~}game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destroy the \doxylink{classgame_ad9c102127b5038f880067ad6c9198d38}{game\+::game} object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classgame_a0a664af4227a7f83b97ae9b7b16f1412}\index{game@{game}!checkAndRevealWords@{checkAndRevealWords}}
+\index{checkAndRevealWords@{checkAndRevealWords}!game@{game}}
+\doxysubsubsection{\texorpdfstring{checkAndRevealWords()}{checkAndRevealWords()}}
+{\footnotesize\ttfamily \label{classgame_a0a664af4227a7f83b97ae9b7b16f1412} 
+int game\+::check\+And\+Reveal\+Words (\begin{DoxyParamCaption}\item[{std\+::string \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{board}{, }\item[{bool \texorpdfstring{$\ast$}{*}}]{revealed}{, }\item[{int}]{rows}{, }\item[{int}]{cols}{, }\item[{int}]{x1}{, }\item[{int}]{y1}{, }\item[{int}]{x2}{, }\item[{int}]{y2}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classgame_af875d3b5898df522fa4adaab36efef4a}\index{game@{game}!gameLoop@{gameLoop}}
+\index{gameLoop@{gameLoop}!game@{game}}
+\doxysubsubsection{\texorpdfstring{gameLoop()}{gameLoop()}}
+{\footnotesize\ttfamily \label{classgame_af875d3b5898df522fa4adaab36efef4a} 
+int game\+::game\+Loop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Main game loop, contains the logic for finding the cells in the 2d array. 
+
+\begin{DoxyReturn}{Returns}
+int Returns 0 if all the words are found, else returns 1 as a catch condition 
+\end{DoxyReturn}
+\Hypertarget{classgame_a3fa363de9ebd2b0c4dd5abd8d1cd19ba}\index{game@{game}!printBoard@{printBoard}}
+\index{printBoard@{printBoard}!game@{game}}
+\doxysubsubsection{\texorpdfstring{printBoard()}{printBoard()}}
+{\footnotesize\ttfamily \label{classgame_a3fa363de9ebd2b0c4dd5abd8d1cd19ba} 
+void game\+::print\+Board (\begin{DoxyParamCaption}\item[{std\+::string \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{board}{, }\item[{const bool \texorpdfstring{$\ast$}{*}}]{revealed}{, }\item[{const int}]{cell\+Width}{, }\item[{int}]{rows}{, }\item[{int}]{cols}{}\end{DoxyParamCaption})}
+
+
+
+Prints out the board, with cells containing either the placeholder or the shown word. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & Pointer to the gameboard array \\
+\hline
+{\em revealed} & Pointer that stores which of the values in the gameboard are revealed \\
+\hline
+{\em cell\+Width} & Controls the width of the cells in the board, can be changed \\
+\hline
+{\em rows} & Rows needed to display the gameboard \\
+\hline
+{\em cols} & Columns needed to display the gameboard \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classgame_afb0d520d10ea97e22e5dd1bc22ada83d}\index{game@{game}!start@{start}}
+\index{start@{start}!game@{game}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \label{classgame_afb0d520d10ea97e22e5dd1bc22ada83d} 
+bool game\+::start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Startup script for game. 
+
+\begin{DoxyReturn}{Returns}
+true If there are enough words to fill board, board size is allocated, and words are placed into board array 
+
+false In case enough words are somehow not chosen for the board 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{game_8hpp}{game.\+hpp}}\item 
+\mbox{\hyperlink{game_8cpp}{game.\+cpp}}\end{DoxyCompactItemize}
